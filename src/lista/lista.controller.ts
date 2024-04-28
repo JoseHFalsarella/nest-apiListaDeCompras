@@ -1,4 +1,10 @@
-import { Controller } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 
 @Controller('lista')
-export class ListaController {}
+export class ListaController {
+
+    @Get()
+    geatAllItems(){
+        return ['Item1', 'Item2']
+    }
+}

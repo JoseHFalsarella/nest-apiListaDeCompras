@@ -10,7 +10,17 @@ export class ListaService {
 
     }
 
-    async geatAllItems(){
+    async getAllItems(){
         return await this.repo.find();
+    }
+
+    async createItem(nome: string, quantity: number) {
+        const item = new ItemEntity();
+        item.nome = nome;
+        item.quantity = quantity;
+        item.status = false;
+
+        this.repo.create(item);
+        return await this.repo.save(item);
     }
 }

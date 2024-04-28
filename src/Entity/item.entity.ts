@@ -5,7 +5,7 @@ export class ItemEntity {
     @PrimaryGeneratedColumn()
     id: number;
     @Column()
-    name: string;
+    nome: string;
     @Column()
     quantity: number;
     @Column()

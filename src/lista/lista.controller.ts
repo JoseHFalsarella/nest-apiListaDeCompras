@@ -1,10 +1,13 @@
 import { Controller, Get } from '@nestjs/common';
+import { ListaService } from './lista.service';
 
 @Controller('lista')
 export class ListaController {
 
+    constructor(private listaService: ListaService) {}
+
     @Get()
     geatAllItems(){
-        return ['Item1', 'Item2']
+        return this.listaService.geatAllItems();
     }
 }

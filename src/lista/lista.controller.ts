@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, ValidationPipe } from '@nestjs/common';
+import { Body, Controller, Get, Param, Patch, Post, ValidationPipe } from '@nestjs/common';
 import { ListaService } from './lista.service';
 import { CreateItemDto } from 'src/DTO/create-item.dto';
 
@@ -15,5 +15,10 @@ export class ListaController {
     @Post()
     createNewItem(@Body(ValidationPipe) data: CreateItemDto){
         return this.listaService.createItem(data);
+    }
+
+    @Patch(':id')
+    updateItemStatus(@Param('id') id: number, @Body('status') status: boolean){
+        return this.listaService.updateItem(id, status);
     }
 }

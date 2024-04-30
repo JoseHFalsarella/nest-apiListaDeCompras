@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CreateItemDto } from 'src/DTO/create-item.dto';
 import { ItemEntity } from 'src/Entity/item.entity';
@@ -25,4 +25,10 @@ export class ListaService {
         this.repo.create(item);
         return await this.repo.save(item);
     }
+
+    async updateItem(id: number, status: boolean) {
+        await this.repo.update({id}, {status});
+        return this.repo.findOne({where: {id}});
+    }
+    
 }

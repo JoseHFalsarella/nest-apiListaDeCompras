@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import { CreateItemDto } from 'src/DTO/create-item.dto';
 import { ItemEntity } from 'src/Entity/item.entity';
 import { Repository } from 'typeorm';
 
@@ -14,8 +15,9 @@ export class ListaService {
         return await this.repo.find();
     }
 
-    async createItem(nome: string, quantity: number) {
+    async createItem(createItemDto: CreateItemDto) {
         const item = new ItemEntity();
+        const {nome, quantity} = createItemDto;
         item.nome = nome;
         item.quantity = quantity;
         item.status = false;

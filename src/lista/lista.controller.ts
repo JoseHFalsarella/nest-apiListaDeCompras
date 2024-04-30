@@ -1,5 +1,6 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post, ValidationPipe } from '@nestjs/common';
 import { ListaService } from './lista.service';
+import { CreateItemDto } from 'src/DTO/create-item.dto';
 
 @Controller('lista')
 export class ListaController {
@@ -12,9 +13,7 @@ export class ListaController {
     }
 
     @Post()
-    createNewItem(@Body() data){
-        const {nome, quantity} = data;
-
-        return this.listaService.createItem(nome, quantity);
+    createNewItem(@Body(ValidationPipe) data: CreateItemDto){
+        return this.listaService.createItem(data);
     }
 }

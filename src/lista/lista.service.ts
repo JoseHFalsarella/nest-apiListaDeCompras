@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable, InternalServerErrorException, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CreateItemDto } from 'src/DTO/create-item.dto';
 import { ItemEntity } from 'src/Entity/item.entity';
@@ -27,8 +27,21 @@ export class ListaService {
     }
 
     async updateItem(id: number, status: boolean) {
-        await this.repo.update({id}, {status});
-        return this.repo.findOne({where: {id}});
+        try{
+            await this.repo.update({id}, {status});
+            return this.repo.findOne({where: {id}});
+        } catch (err) { 
+            throw new InternalServerErrorException(`Algo deu errado`);
+        }
+        
+    }
+
+    async deleteItem(id: number){
+        try{
+            return await this.repo.delete({id});
+        } catch (err) { 
+            throw new InternalServerErrorException(`Algo deu errado`);
+        }
     }
     
 }

@@ -1,3 +1,4 @@
+/*
 import { IsNotEmpty, Matches, MaxLength, MinLength } from "class-validator";
 
 export class RegisterUserDto {
@@ -10,3 +11,4 @@ export class RegisterUserDto {
     })
     password: string;
 }
+*/

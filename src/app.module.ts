@@ -3,7 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ListaModule } from './lista/lista.module';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
-import { AuthModule } from './auth/auth.module';
+//import { AuthModule } from './auth/auth.module';
 
 const ormOptions: TypeOrmModuleOptions = {
   type: 'mysql',
@@ -20,7 +20,7 @@ const ormOptions: TypeOrmModuleOptions = {
   imports: [
     ListaModule,
     TypeOrmModule.forRoot(ormOptions),
-    AuthModule
+    //AuthModule
   ],
   controllers: [AppController],
   providers: [AppService],

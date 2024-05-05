@@ -1,3 +1,4 @@
+/*
 import { Module } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
@@ -26,3 +27,4 @@ import { JwtCustomStrategy } from './jwt.custom.strategy';
   exports: [AuthService, PassportModule, JwtCustomStrategy]
 })
 export class AuthModule {}
+*/

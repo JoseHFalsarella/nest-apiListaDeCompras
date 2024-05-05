@@ -1,3 +1,4 @@
+/*
 import { IsNotEmpty } from "class-validator";
 
 export class UserLoginDto {
@@ -6,3 +7,4 @@ export class UserLoginDto {
     @IsNotEmpty()
     password: string;
 }
+*/

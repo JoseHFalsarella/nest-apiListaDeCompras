@@ -1,3 +1,4 @@
+/*
 import { Injectable, InternalServerErrorException, UnauthorizedException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { RegisterUserDto } from 'src/DTO/register-user.dto';
@@ -53,3 +54,4 @@ export class AuthService {
         }
     }
 }
+*/

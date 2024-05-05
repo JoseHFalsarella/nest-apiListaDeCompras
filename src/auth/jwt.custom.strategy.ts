@@ -1,3 +1,4 @@
+/*
 import { UnauthorizedException } from "@nestjs/common";
 import { PassportStrategy } from "@nestjs/passport";
 import { InjectRepository } from "@nestjs/typeorm";
@@ -23,3 +24,4 @@ export class JwtCustomStrategy extends PassportStrategy(Strategy){
         return user;
     }
 }
+*/
